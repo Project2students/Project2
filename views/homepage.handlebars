@@ -1,6 +1,34 @@
 <h2>This is Home Page</h2>
 <button class="btn">Fetch Data</button>
-<main>
+
+<div class="wrapper">
+  {{#each exercises as |exercise|}}
+    <div class="exercise-item">
+      <a
+        class="btn"
+        data-bs-toggle="collapse"
+        href="#collapse-{{exercise.exercise_id}}"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapse"
+      >
+        <h4 class="exercise_name">{{exercise.exercise_name}}
+          <span class="muscle-group">({{exercise.muscle_group}})</span></h4>
+      </a>
+      <button class="add"><i class="fa-solid fa-circle-plus fa-2x"></i></button>
+    </div>
+    <div class="collapse" id="collapse-{{exercise.exercise_id}}">
+      <div class="card card-body">
+        <div class="item-description">
+          <img class="gifs" src="gifs/{{exercise.exercise_id}}.gif" alt="" />
+          <p>{{exercise.description}}</p>
+          <p class="duration">Duration: {{exercise.duration}}s</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+{{! <main>
 
   <div class="muscle-groups">
     <h1>Muscle Group Selector</h1>
@@ -26,6 +54,17 @@
     <input type="checkbox" class="pectorals muscles-helper" id="pectorals" />
     <label for="pectorals">Pectorals</label>
     <h2>Legs</h2>
+    <input type="checkbox" class="adductors muscles-helper" id="adductors" />
+    <label for="adductors">Adductors</label>
+    <input type="checkbox" class="calves muscles-helper" id="calves" />
+    <label for="calves">Calves</label>
+    <input type="checkbox" class="hamstrings muscles-helper" id="hamstrings" />
+    <label for="hamstrings">Hamstrings</label>
+    <input type="checkbox" class="glutes muscles-helper" id="glutes" />
+    <label for="glutes">Glutes</label>
+    <input type="checkbox" class="quads muscles-helper" id="quads" />
+    <label for="quads">Quads</label>
+    <h2>Full Body</h2>
     <input type="checkbox" class="adductors muscles-helper" id="adductors" />
     <label for="adductors">Adductors</label>
     <input type="checkbox" class="calves muscles-helper" id="calves" />
@@ -143,18 +182,6 @@
 
   </div>
 
-  <div class="info">
-    <p>Uses mostly plain HTML and SASS, but also uses a bit of Javacript
-      (vanilla) for the hover effect, in case users don't quite know what muscle
-      group they're looking at.</p>
-    <p>Try clicking the muscle groups or the labels.</p>
-    <p>By
-      <a href="http://ryanmpoe.com">Ryan M. Poe</a>
-      (<a href="https://twitter.com/RyanPoe85">@RyanPoe85</a>) for the fitness
-      website
-      <a href="http://w8mngr.com/">w8mngr.com</a></p>
-  </div>
-
-</main>
+</main> }}
 
 <script src="./js/homepage.js" type="application/javascript"></script>

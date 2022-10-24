@@ -1,6 +1,7 @@
 console.log("connected");
 const button = document.querySelector(".btn");
-const url = "http://localhost:3001/api/exercisesData";
+const urlExercises = "http://localhost:3001/api/exercisesData";
+const urlMuscles = "http://localhost:3001/api/exercisesData";
 
 const getData = (url) => {
   return fetch(url)
@@ -10,5 +11,9 @@ const getData = (url) => {
 
 button.addEventListener("click", () => {
   console.log("fetching");
-  getData(url);
+  getData(urlExercises);
 });
+
+const getMuscleData = (url) => {
+  getData(url);
+};
