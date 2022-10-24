@@ -13,14 +13,20 @@
 
     <nav>
       <a href="/">Home</a>
+      
       {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
+        <a href="/myProfile">My Profile</a>
+        <a href="/social">Social</a>
+        <a href="/workoutPage">Workouts</a>
       {{else}}
         <a href="/login">Login</a>
       {{/if}}
+
     </nav>
+
     <main>
-      <div class="fit">
+      <div class="container">
         {{{body}}}
       </div>
     </main>
