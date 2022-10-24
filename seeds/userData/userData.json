@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "first_name": "Ray",
+    "last_name": "Kurbanov",
+    "email": "ray.kurbanov@gmail.com",
+    "password": "password123",
+    "weight": "210",
+    "height": "72",
+    "age": "30"
+  },
+  {
+    "id": "2",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@gmail.com",
+    "password": "password12345",
+    "weight": "180",
+    "height": "75",
+    "age": "50"
+  },
+  {
+    "id": "3",
+    "first_name": "Amiko",
+    "last_name": "Chan",
+    "email": "amikochan@gmail.com",
+    "password": "password12345",
+    "weight": "180",
+    "height": "70",
+    "age": "42"
+  },
+  {
+    "id": "4",
+    "first_name": "Mike",
+    "last_name": "Sparrow",
+    "email": "mikesparrow@gmail.com",
+    "password": "password12345",
+    "weight": "160",
+    "height": "60",
+    "age": "18"
+  }
+]
