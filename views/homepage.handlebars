@@ -1,4 +1,35 @@
 <h2>Welcome to GitFit!</h2>
 <button class="btn">Get Workouts</button>
 
+
+<div class="wrapper">
+  {{#each exercises as |exercise|}}
+    <div class="exercise-item">
+      <a
+        class="btn"
+        data-bs-toggle="collapse"
+        href="#collapse-{{exercise.exercise_id}}"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapse"
+      >
+        <h4 class="exercise_name">{{exercise.exercise_name}}
+          <span class="muscle-group">({{exercise.muscle_group}})</span></h4>
+      </a>
+      <button class="add"><i class="fa-solid fa-circle-plus fa-2x"></i></button>
+    </div>
+    <div class="collapse" id="collapse-{{exercise.exercise_id}}">
+      <div class="card card-body">
+        <div class="item-description">
+          <img class="gifs" src="gifs/{{exercise.exercise_id}}.gif" alt="" />
+          <p>{{exercise.description}}</p>
+          <p class="duration">Duration: {{exercise.duration}}s</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+
 <script src="./js/homepage.js" type="application/javascript"></script>
+
