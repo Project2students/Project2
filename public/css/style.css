@@ -31,6 +31,7 @@
   width: 80%;
 }
 
+
 img:hover {
   transition: all 0.3s;
   transform: scale(3);
@@ -49,6 +50,48 @@ img:hover {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+
+nav a {
+  color: var(--dark);
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  color: var(--secondary);
+  background-color: var(--dark);
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding-right: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  transition: color 0.1s;
+}
+
+.btn-no-style:hover {
+  color: var(--secondary);
+  background-color: var(--dark);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CARDS */
+.card {
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+
 }
 
 .btn {
@@ -67,6 +110,7 @@ img:hover {
   font-weight: bold;
 }
 
+
 .card {
   border-radius: 40px;
 }
@@ -74,4 +118,13 @@ img:hover {
 .muscle-group {
   font-style: italic;
   font-size: small;
+
+/* LAYOUT */
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+
+
 }
