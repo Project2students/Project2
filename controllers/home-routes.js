@@ -5,12 +5,9 @@ const withAuth = require("../utils/auth");
 const { exercisesData } = require("../models/ExercisesData");
 const ExercisesData = require("../models/ExercisesData");
 
-
-
 const MyProfileData = require("../models/MyProfileData");
 
-
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const exercisesData = await ExercisesData.findAll();
     const exercises = exercisesData.map((exercise) =>
@@ -35,14 +32,12 @@ router.get("/login", async (req, res) => {
 router.get("/myProfile", async (req, res) => {
   try {
     const myProfileData = await MyProfileData.findAll({});
-    
+
     res.render("MyProfile", { loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router;
