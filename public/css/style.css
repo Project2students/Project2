@@ -6,7 +6,7 @@
 
 .wrapper {
   display: flex;
-  width: 33%;
+  width: 40%;
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -31,7 +31,6 @@
   width: 80%;
 }
 
-
 img:hover {
   transition: all 0.3s;
   transform: scale(3);
@@ -50,6 +49,7 @@ img:hover {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+}
 
 nav a {
   color: var(--dark);
@@ -91,7 +91,6 @@ img {
   border-radius: 10px;
   background-color: var(--light);
   color: var(--dark);
-
 }
 
 .btn {
@@ -110,7 +109,6 @@ img {
   font-weight: bold;
 }
 
-
 .card {
   border-radius: 40px;
 }
@@ -118,6 +116,7 @@ img {
 .muscle-group {
   font-style: italic;
   font-size: small;
+}
 
 /* LAYOUT */
 .container {
@@ -125,6 +124,46 @@ img {
   flex-flow: column wrap;
   align-content: center;
   align-items: center;
+}
 
+.wrapper-2 {
+  width: 29%;
+  border: 1px solid black;
+}
+.wrapper-2 .container {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
 
+.main-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.wrapper-2 .container {
+  position: relative;
+}
+.total_duration {
+  position: absolute;
+  bottom: 0;
+}
+
+.delete_btn {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.list {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.workout_list_item {
+  width: 100%;
+  list-style: none;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
 }
