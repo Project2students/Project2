@@ -7,10 +7,23 @@
 .wrapper {
   display: flex;
   width: 33%;
-  align-items: center;
+  align-items: left;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 10px 15px;
+}
+
+.body {
+  background-color: bisque;
+}
+
+.profile {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.user-info {
+  margin-left: 50px;
 }
 
 .exercise-item {
@@ -50,6 +63,13 @@ img:hover {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+}
+
+nav {
+  background-color: lightsalmon;
+  color: black;
+  padding: 10px;
+}
 
 nav a {
   color: var(--dark);
@@ -118,6 +138,7 @@ img {
 .muscle-group {
   font-style: italic;
   font-size: small;
+}
 
 /* LAYOUT */
 .container {
