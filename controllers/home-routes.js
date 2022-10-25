@@ -5,7 +5,7 @@ const withAuth = require("../utils/auth");
 const { exercisesData } = require("../models/ExercisesData");
 const ExercisesData = require("../models/ExercisesData");
 
-const MyProfileData = require("../models/MyProfileData");
+const MyProfileData = require("../models/User");
 
 router.get("/", withAuth, async (req, res) => {
   try {

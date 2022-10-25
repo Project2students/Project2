@@ -18,6 +18,19 @@ body {
   margin: 10px 15px;
 }
 
+.body {
+  background-color: bisque;
+}
+
+.profile {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.user-info {
+  margin-left: 50px;
+}
+
 .exercise-item {
   width: 100%;
   height: 40px;
@@ -54,6 +67,12 @@ img:hover {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+}
+
+nav {
+  background-color: lightsalmon;
+  color: black;
+  padding: 10px;
 }
 
 nav a {
@@ -179,20 +198,21 @@ img {
 /* workout page */
 /* timer */
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
-$base-font: 'Rubik', Arial, sans-serif;
+$base-font: "Rubik", Arial, sans-serif;
 $base-font-size: 12px;
-$white: #DADADB;
+$white: #dadadb;
 $black: #18191d;
-$drk-gray: #1F2025;
+$drk-gray: #1f2025;
 $lt-gray: #353741;
-$lt-green: #B8D087;
-$green: #00996D;
+$lt-green: #b8d087;
+$green: #00996d;
 
 @mixin bg-gradient {
   background: linear-gradient(135deg, $lt-green, $green);
 }
 @mixin shadow {
-  box-shadow: 0 16px 28px 0 rgba(0,0,0,.8),0 25px 55px 0 rgba(0,0,0,0.21);
+  box-shadow: 0 16px 28px 0 rgba(0, 0, 0, 0.8),
+    0 25px 55px 0 rgba(0, 0, 0, 0.21);
 }
 
 html,
@@ -205,7 +225,9 @@ body {
   letter-spacing: $base-font-size/20;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -233,7 +255,7 @@ body {
 .header {
   text-align: center;
   padding: 0 20px 20px 30%;
-  font-size: $base-font-size*1.3;
+  font-size: $base-font-size * 1.3;
   border-bottom: solid $black 1px;
 }
 
@@ -247,20 +269,20 @@ body {
 
 .timer-display {
   color: $lt-green;
-  font-size: $base-font-size*3;
+  font-size: $base-font-size * 3;
   margin-top: 60px;
   margin-left: 10px;
   text-align: center;
 }
 
 svg#gradient {
-    width: 100px;
-    height: 40px;
-    vertical-align: bottom;
-    pointer-events: none;
-    text {
-      fill: url(#linearGradient);
-    }
+  width: 100px;
+  height: 40px;
+  vertical-align: bottom;
+  pointer-events: none;
+  text {
+    fill: url(#linearGradient);
+  }
 }
 
 #status {
@@ -316,7 +338,7 @@ svg#gradient {
   font-size: $base-font-size/1.5;
   left: 50%;
   margin-top: 0;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background: $drk-gray;
   padding: 5px 20px;
   border-radius: 20px;
@@ -327,9 +349,8 @@ svg#gradient {
   display: flex;
   align-items: center;
   text-align: center;
-   color: lighten($lt-gray, 20%);
+  color: lighten($lt-gray, 20%);
   div {
-    
     padding-bottom: 0;
     flex: 1;
   }
@@ -352,21 +373,21 @@ svg#gradient {
 
 .set-display {
   color: $white;
-  font-size: $base-font-size*1.4;
+  font-size: $base-font-size * 1.4;
   padding-top: 10px;
 }
 .actions {
   .minus-add {
-    font-size: $base-font-size*1.5;
+    font-size: $base-font-size * 1.5;
     display: flex;
     padding: 0;
     justify-content: center;
     div {
       cursor: pointer;
       margin: 1px;
-      padding:  5px;
+      padding: 5px;
       margin-bottom: 10px;
-      flex: .5;
+      flex: 0.5;
       &:hover {
         color: $white;
       }
@@ -374,7 +395,7 @@ svg#gradient {
         color: $lt-gray;
       }
     }
-  }  
+  }
 }
 
 .spinner-container {
@@ -393,7 +414,7 @@ svg#gradient {
   width: 50px;
   margin-top: 181px;
   left: 200px;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
@@ -406,24 +427,34 @@ $duration: 1.2s;
 }
 
 @keyframes rotator {
-  0% { transform: rotate(150deg); }
-  20% { transform: rotate(200deg); }
-  100% { transform: rotate(390deg); }
+  0% {
+    transform: rotate(150deg);
+  }
+  20% {
+    transform: rotate(200deg);
+  }
+  100% {
+    transform: rotate(390deg);
+  }
 }
 
 .spinning {
   stroke-dasharray: $offset;
   stroke-dashoffset: 185;
   transform-origin: center;
-  animation:
-    dash $duration infinite, 
-    colors $duration infinite;
+  animation: dash $duration infinite, colors $duration infinite;
 }
 
 @keyframes colors {
-	0% { stroke: $lt-green; }
-	50% { stroke: $green; }
-  100% { stroke: $lt-green; }
+  0% {
+    stroke: $lt-green;
+  }
+  50% {
+    stroke: $green;
+  }
+  100% {
+    stroke: $lt-green;
+  }
 }
 
 @keyframes dash {
@@ -436,11 +467,11 @@ $duration: 1.2s;
   100% {
     stroke-dashoffset: 185;
   }
- // 0% { stroke-dashoffset: $offset; }
- // 50% {
- //   stroke-dashoffset: $offset/1.2;
- // }
- // 100% {
- //   stroke-dashoffset: $offset;
- // }
+  // 0% { stroke-dashoffset: $offset; }
+  // 50% {
+  //   stroke-dashoffset: $offset/1.2;
+  // }
+  // 100% {
+  //   stroke-dashoffset: $offset;
+  // }
 }

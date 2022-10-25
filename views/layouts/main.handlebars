@@ -25,16 +25,16 @@
 
   </head>
 
-  <body>
+  <body class="body">
 
     <nav>
       <a href="/">Home</a>
       
       {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
         <a href="/myProfile">My Profile</a>
         <a href="/social">Social</a>
         <a href="/workoutPage">Workouts</a>
+        <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
         <a href="/login">Login</a>
       {{/if}}
@@ -42,7 +42,7 @@
     </nav>
 
     <main>
-      <div class="container">
+      <div>
         {{{body}}}
       </div>
     </main>
