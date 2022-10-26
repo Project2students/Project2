@@ -3,6 +3,10 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 const ExercisesData = require("../models/ExercisesData");
 
+const { myProfileData } = require("../models/User");
+const MyProfileData = require("../models/User");
+
+
 router.get("/", withAuth, async (req, res) => {
   try {
     const userData = {
@@ -37,5 +41,24 @@ router.get("/login", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+router.get("/myProfile", async (req, res) => {
+  try {
+    const myProfileData = await MyProfileData.findAll();
+    const users = myProfileData.map((users) =>
+      users.get({ plain: true })
+    
+    );
+    console.log(users)
+    res.render("myProfile", { users , loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
 
 module.exports = router;

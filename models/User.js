@@ -23,13 +23,11 @@ User.init(
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: "unknown",
+      allowNull: false,
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: "unknown",
+      allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
@@ -48,18 +46,15 @@ User.init(
     },
     weight: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 10,
+      allowNull: false,
     },
     height: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 10,
+      allowNull: false,
     },
     age: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 10,
+      allowNull: false,
     },
   },
   {
