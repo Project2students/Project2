@@ -1,10 +1,38 @@
-<h1 class="profile">My Profile</h1>
-<h2>Hello {{userData.first_name}} {{userData.last_name}}</h2>
+<h1 class="profileHeader">{{userData.first_name}}'s Profile</h1>
 
-<div class="card" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="" />
-  <div class="card-body">
-    <button>Upload Picture</button>
+<div class="main-profile">
+  <div class="profile_wrapper">
+    <div class="profile">
+      <img
+        class="profileImg"
+        src="/images/index-{{userData.username}}.JPG"
+        alt=""
+        value="{{userData.id}}"
+      />
+    </div>
+    <form action="/myProfile" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="exampleFormControlFile1">Upload:</label>
+        <input
+          name="myImage"
+          type="file"
+          class="form-control-file"
+          id="exampleFormControlFile1"
+        />
+      </div>
+      <button class="save">Save</button>
+    </form>
+  </div>
+  <div class="profile-data">
+    <h4 disabled="true">First Name: {{userData.first_name}}</h4 disabled="true">
+    <h4 disabled="true">Last Name: {{userData.last_name}}</h4 disabled="true">
+    <h4 disabled="true">Email: {{userData.email}}</h4 disabled="true">
+    <h4 disabled="true">Username: {{userData.username}}</h4 disabled="true">
+    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
+    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
+    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
+    <button class="edit btn primary">Edit</button>
+    <button class="btn success">Save</button>
   </div>
 </div>
 
