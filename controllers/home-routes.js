@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 const { exercisesData } = require("../models/ExercisesData");
 const ExercisesData = require("../models/ExercisesData");
-
+const { myProfileData } = require("../models/User");
 const MyProfileData = require("../models/User");
 
 
@@ -32,9 +32,13 @@ router.get("/login", async (req, res) => {
 
 router.get("/myProfile", async (req, res) => {
   try {
-    const myProfileData = await MyProfileData.findAll({});
+    const myProfileData = await MyProfileData.findAll();
+    const users = myProfileData.map((users) =>
+      users.get({ plain: true })
     
-    res.render("MyProfile", { loggedIn: req.session.loggedIn });
+    );
+    console.log(users)
+    res.render("myProfile", { users , loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
