@@ -24,13 +24,24 @@
     </form>
   </div>
   <div class="profile-data">
-    <h4 disabled="true">First Name: {{userData.first_name}}</h4 disabled="true">
-    <h4 disabled="true">Last Name: {{userData.last_name}}</h4 disabled="true">
-    <h4 disabled="true">Email: {{userData.email}}</h4 disabled="true">
-    <h4 disabled="true">Username: {{userData.username}}</h4 disabled="true">
-    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
-    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
-    <input disabled="true">First Name: {{userData.first_name}}</input disabled="true">
+    <h4 >First Name: {{userData.first_name}}</h4 >
+    <h4 >Last Name: {{userData.last_name}}</h4 >
+    <h4 >Email: {{userData.email}}</h4 >
+    <h4 >Username: {{userData.username}}</h4 >
+    <div class="profile-info">
+      <label for="age">Age: </label>
+      <input name="age" id="age"  disabled="true">{{userData.age}}</input>
+    </div>
+   <div class="profile-info">
+      <label for="height">Height: </label>
+      <input name="height" id="height"  disabled="true">{{userData.height}}</input>
+   </div>
+    <div class="profile-info">
+      <label for="weight">Weight: </label>
+      <input name="weight" id="weight"  disabled="true">{{userData.weight}}</input>
+    </div>
+
+
     <button class="edit btn primary">Edit</button>
     <button class="btn success">Save</button>
   </div>

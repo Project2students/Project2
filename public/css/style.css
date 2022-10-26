@@ -268,3 +268,7 @@ input[name="myImage"] {
   display: flex;
   flex-direction: column;
 }
+
+.profile-info {
+  display: flex;
+}
