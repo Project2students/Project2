@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "username": "rkurbanov",
     "first_name": "Ray",
     "last_name": "Kurbanov",
     "email": "ray.kurbanov@gmail.com",
@@ -11,6 +12,7 @@
   },
   {
     "id": "2",
+    "username": "jdoe",
     "first_name": "John",
     "last_name": "Doe",
     "email": "johndoe@gmail.com",
@@ -21,6 +23,7 @@
   },
   {
     "id": "3",
+    "username": "achan",
     "first_name": "Amiko",
     "last_name": "Chan",
     "email": "amikochan@gmail.com",
@@ -31,6 +34,7 @@
   },
   {
     "id": "4",
+    "username": "msparrow",
     "first_name": "Mike",
     "last_name": "Sparrow",
     "email": "mikesparrow@gmail.com",
