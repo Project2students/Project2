@@ -79,12 +79,10 @@ addBtn.forEach((el) =>
   })
 );
 
-console.log(created_list_items);
-
 const saveWorkout = document.querySelector("#saveWorkout");
 saveWorkout.addEventListener("click", () => {
-  console.log("connected");
   list.innerHTML = "";
+  total_duration.innerHTML = "Duration: 0s";
   document
     .querySelectorAll(".exercise-item")
     .forEach((el) => el.classList.remove("active"));
@@ -100,5 +98,39 @@ saveWorkout.addEventListener("click", () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(created_list_items),
-  }).then((response) => (created_list_items = []));
+  }).then((response) => {
+    created_list_items = [];
+    const fullbody_style = document.querySelectorAll("svg g g");
+    fullbody_style.forEach((el) => (el.style.fill = "black"));
+  });
 });
+
+const all_muscleGroups = document.querySelectorAll("svg g g");
+all_muscleGroups.forEach((el) =>
+  el.addEventListener("click", (e) => {
+    console.log(e.target.parentNode);
+    e.target.parentNode.style.fill = "red";
+  })
+);
+
+addBtn.forEach((el) =>
+  el.addEventListener("click", (e) => {
+    const listItem = e.target.parentNode.parentNode;
+
+    let selected;
+    console.log(e.target.dataset.muscle);
+
+    if (
+      e.target.dataset.muscle == "Full body" &&
+      listItem.classList.contains("active")
+    ) {
+      const fullbody_style = document.querySelectorAll("svg g g");
+      fullbody_style.forEach((el) => (el.style.fill = "red"));
+    } else {
+      const selected = document.querySelectorAll(`#${e.target.dataset.muscle}`);
+      selected.forEach((el) => (el.style.fill = "red"));
+    }
+
+    // selected.style.fill = "red";
+  })
+);

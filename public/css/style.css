@@ -357,3 +357,13 @@ input[name="myImage"] {
 input[name="myImage"] {
   background-color: blueviolet;
 }
+
+.activated {
+  background-color: blue;
+  color: blue;
+  fill: aqua;
+}
+
+#Deltoids {
+  background-color: blue;
+}
