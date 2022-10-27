@@ -240,6 +240,12 @@ img {
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
+
+  margin: 5px 0px;
+}
+/* login page */
+.page-title {
+
   margin: 10px 0px;
 }
 
@@ -322,4 +328,5 @@ input[name="myImage"] {
 
 .profile-info {
   display: flex;
+
 }
