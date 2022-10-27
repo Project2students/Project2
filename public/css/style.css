@@ -3,6 +3,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.main_header {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
 .gifs {
   width: 75px;
   height: 75px;
@@ -56,35 +63,34 @@ input {
   align-items: center;
 }
 
-.form-group {
+/* .form-group {
   text-align: center;
-  margin:5px;
+  margin: 5px;
   font-size: 25px;
 }
 
-.user-info {  
-    display: flex;
-    margin: 20px;
-    border: 7px double black;
-    border-radius: 10px;
-    background-color: lightslategray;
-    color: black;
-    height: 350px;
+.user-info {
+  display: flex;
+  margin: 20px;
+  border: 7px double black;
+  border-radius: 10px;
+  background-color: lightslategray;
+  color: black;
+  height: 350px;
 }
 
 .new-user-info {
-    text-align: center;
-    margin: 20px;
-    flex: 0 1 300px;
-    border: 7px double black;
-    border-radius: 10px;
-    background-color: lightslategray;
-    color: black;
-    height: 350px;
+  text-align: center;
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double black;
+  border-radius: 10px;
+  background-color: lightslategray;
+  color: black;
+  height: 350px;
 
   margin: 0px 0.5%;
-
-}
+} */
 
 .exercise-item {
   width: 100%;
@@ -98,6 +104,10 @@ input {
 }
 .exercise-item:hover {
   background-color: antiquewhite;
+}
+
+.exercise-item .btn {
+  width: 90%;
 }
 
 .exercise_name {
@@ -122,6 +132,10 @@ input {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+}
+
+nav {
+  margin-bottom: 25px;
 }
 
 nav a {
@@ -194,7 +208,7 @@ img {
 /* LAYOUT */
 .container {
   display: flex;
-  align-content: center;
+  justify-content: center;
   align-items: center;
   padding: 30px auto;
   border-radius: 10px;
@@ -211,6 +225,7 @@ img {
   min-height: 20px;
   width: 100%;
   border: 1px solid black;
+  position: relative;
 }
 
 .main-wrapper {
@@ -220,15 +235,12 @@ img {
   justify-content: space-evenly;
 }
 
-.wrapper-2 .container {
-  position: relative;
-}
 .total_duration {
   position: absolute;
   bottom: -5px;
-  margin: 10px auto;
+
   margin-top: 25px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   background-color: royalblue;
   padding: 2px 5px;
   border-radius: 5px;
@@ -272,7 +284,8 @@ img {
 .profileImg {
   display: block;
   margin: 20px auto;
-  width: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border: 1px solid black;
   border-radius: 5%;
@@ -329,6 +342,7 @@ input[name="myImage"] {
 }
 .main-profile {
   display: flex;
+  align-items: center;
 }
 
 .profile-data {
@@ -338,4 +352,8 @@ input[name="myImage"] {
 
 .profile-info {
   display: flex;
+}
+
+input[name="myImage"] {
+  background-color: blueviolet;
 }

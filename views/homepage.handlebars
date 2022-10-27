@@ -1,5 +1,4 @@
-<h2>Welcome to GitFit!</h2>
-<h2>Hello {{userData.first_name}} {{userData.last_name}}</h2>
+<h2 class="main_header">{{userData.first_name}}, Welcome to GitFit!</h2>
 <div class="main-wrapper">
   <div class="wrapper">
     <h2 class="selectionHeader">Select Exercise</h2>
@@ -16,7 +15,7 @@
           <h4 class="exercise_name">{{exercise.exercise_name}}
             <span class="muscle-group">({{exercise.muscle_group}})</span></h4>
         </a>
-        <button class="add" id="{{exercise.exercise_id}}" ><i class="fa-solid fa-circle-plus fa-2x" data-name="{{exercise.exercise_name}}" data-duration="{{exercise.duration}}" data-rest_time="{{exercise.rest_time}}" data-exercise_id="{{exercise.exercise_id}}"></i></button>
+        <button class="add" id="{{exercise.exercise_id}}" ><i class="fa-solid fa-circle-plus fa-2x" data-name="{{exercise.exercise_name}}" data-duration="{{exercise.duration}}" data-description="{{exercise.description}}" data-rest_time="{{exercise.rest_time}}" data-exercise_id="{{exercise.exercise_id}}"></i></button>
       </div>
       <div class="collapse" id="collapse-{{exercise.exercise_id}}">
         <div class="card card-body">
@@ -34,7 +33,7 @@
   <div class="wrapper-2">
     <h2 class="workoutPlanHeader">Build Your Custom Workout Plan</h2>
     <div class="container">
-      <ul class="list">
+      <ul class="list" data-value='{{userData.username}}'>
 
       </ul>
           

@@ -1,4 +1,6 @@
 let delete_btn = [];
+const unique = () => Math.floor(Math.random() * 10000);
+let workout_id = unique();
 const addBtn = document.querySelectorAll(".add");
 
 const list = document.querySelector(".list");
@@ -7,22 +9,35 @@ const total_duration = document.querySelector(".total_duration");
 let created_list_items = [];
 addBtn.forEach((el) =>
   el.addEventListener("click", (e) => {
-    console.log(created_list_items);
-    const text = e.target.dataset.name;
+    const exercise_name = e.target.dataset.name;
     const duration = parseInt(e.target.dataset.duration);
+    const username = list.getAttribute("data-value");
+    const description = e.target.dataset.description;
     const rest = parseInt(e.target.dataset.rest_time);
     const exercise_id = parseInt(e.target.dataset.exercise_id);
     const listItem = e.target.parentNode.parentNode;
-    const exist = created_list_items.filter((el) => el.text == text);
+    const exist = created_list_items.filter(
+      (el) => el.exercise_name == exercise_name
+    );
     if (!exist.length) {
-      created_list_items.push({ exercise_id, text, duration, rest });
+      created_list_items.push({
+        workout_id,
+        exercise_id,
+        username,
+        description,
+        exercise_name,
+        duration,
+        rest,
+      });
     }
 
     if (e.target.classList.contains("fa-circle-plus")) {
       list.innerHTML = "";
       created_list_items.forEach((el, index) => {
         const li = document.createElement("li");
-        li.innerHTML = `${index + 1}. ${el.text} - Duration: ${Math.round(
+        li.innerHTML = `${index + 1}. ${
+          el.exercise_name
+        } - Duration: ${Math.round(
           Math.floor((el.duration + el.rest) / 60),
           0
         )}min ${(el.duration + el.rest) % 60}s`;
@@ -34,10 +49,14 @@ addBtn.forEach((el) =>
       listItem.classList.add("active");
     } else if (e.target.classList.contains("fa-circle-minus")) {
       list.innerHTML = "";
-      created_list_items = created_list_items.filter((el) => el.text !== text);
+      created_list_items = created_list_items.filter(
+        (el) => el.exercise_name !== exercise_name
+      );
       created_list_items.forEach((el, index) => {
         const li = document.createElement("li");
-        li.innerHTML = `${index + 1}. ${el.text} - Duration: ${Math.round(
+        li.innerHTML = `${index + 1}. ${
+          el.exercise_name
+        } - Duration: ${Math.round(
           Math.floor((el.duration + el.rest) / 60),
           1
         )}min ${(el.duration + el.rest) % 60}s`;
@@ -59,3 +78,27 @@ addBtn.forEach((el) =>
     }s`;
   })
 );
+
+console.log(created_list_items);
+
+const saveWorkout = document.querySelector("#saveWorkout");
+saveWorkout.addEventListener("click", () => {
+  console.log("connected");
+  list.innerHTML = "";
+  document
+    .querySelectorAll(".exercise-item")
+    .forEach((el) => el.classList.remove("active"));
+  document.querySelectorAll(".add i").forEach((el) => {
+    el.classList.remove("fa-circle-minus");
+    el.classList.add("fa-circle-plus");
+  });
+  workout_id = unique();
+
+  return fetch("http://localhost:3001/api/customWorkout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(created_list_items),
+  }).then((response) => (created_list_items = []));
+});
