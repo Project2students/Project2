@@ -1,8 +1,21 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
+html,
+body {  
+  /* background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: lightgreen;
 }
+
+.main_header {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
 .gifs {
   width: 75px;
   height: 75px;
@@ -19,16 +32,22 @@ body {
   margin: 10px 15px;
 }
 
-.body {
-  background-color: bisque;
-}
 
 .row {
+  display: flex;
+  align-items: flex-start;
+  margin: 25px;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
   justify-content: center;
 }
 
 .page-title {
   font-size: 40px;
+  text-align: center;
 }
 
 .profile {
@@ -41,7 +60,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0 0 20px 0;
-  flex: 0 0 50%;
+  flex: 50%;
   max-width: 500px;
   padding: 5px;
   border: 7px double black;
@@ -58,32 +77,8 @@ input {
 
 .form-group {
   text-align: center;
-  margin:5px;
+  margin: 5px;
   font-size: 25px;
-}
-
-.user-info {  
-    display: flex;
-    margin: 20px;
-    border: 7px double black;
-    border-radius: 10px;
-    background-color: lightslategray;
-    color: black;
-    height: 350px;
-}
-
-.new-user-info {
-    text-align: center;
-    margin: 20px;
-    flex: 0 1 300px;
-    border: 7px double black;
-    border-radius: 10px;
-    background-color: lightslategray;
-    color: black;
-    height: 350px;
-
-  margin: 0px 0.5%;
-
 }
 
 .exercise-item {
@@ -98,6 +93,10 @@ input {
 }
 .exercise-item:hover {
   background-color: antiquewhite;
+}
+
+.exercise-item .btn {
+  width: 90%;
 }
 
 .exercise_name {
@@ -122,6 +121,10 @@ input {
 .add:hover {
   transform: scale(1.2);
   background-color: antiquewhite;
+}
+
+nav {
+  margin-bottom: 25px;
 }
 
 nav a {
@@ -194,7 +197,7 @@ img {
 /* LAYOUT */
 .container {
   display: flex;
-  align-content: center;
+  justify-content: center;
   align-items: center;
   padding: 30px auto;
   border-radius: 10px;
@@ -211,6 +214,7 @@ img {
   min-height: 20px;
   width: 100%;
   border: 1px solid black;
+  position: relative;
 }
 
 .main-wrapper {
@@ -220,15 +224,12 @@ img {
   justify-content: space-evenly;
 }
 
-.wrapper-2 .container {
-  position: relative;
-}
 .total_duration {
   position: absolute;
   bottom: -5px;
-  margin: 10px auto;
+
   margin-top: 25px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   background-color: royalblue;
   padding: 2px 5px;
   border-radius: 5px;
@@ -258,6 +259,12 @@ img {
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
+
+  margin: 5px 0px;
+}
+/* login page */
+.page-title {
+
   margin: 10px 0px;
 }
 
@@ -272,7 +279,8 @@ img {
 .profileImg {
   display: block;
   margin: 20px auto;
-  width: 100%;
+  width: auto;
+  height: auto;
   object-fit: cover;
   border: 1px solid black;
   border-radius: 5%;
@@ -293,7 +301,7 @@ img {
 
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -329,13 +337,32 @@ input[name="myImage"] {
 }
 .main-profile {
   display: flex;
+  align-items: center;
 }
 
 .profile-data {
   display: flex;
   flex-direction: column;
+  border: black;
+  
 }
 
 .profile-info {
   display: flex;
+
+}
+
+
+input[name="myImage"] {
+  background-color: blueviolet;
+}
+
+.activated {
+  background-color: blue;
+  color: blue;
+  fill: aqua;
+}
+
+#Deltoids {
+  background-color: blue;
 }

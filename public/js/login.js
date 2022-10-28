@@ -22,6 +22,7 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
   
+  const username = document.querySelector('#username-signup').value.trim();
   const first_name = document.querySelector('#firstName-signup').value.trim();
   const last_name = document.querySelector('#lastName-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
@@ -29,13 +30,13 @@ const signupFormHandler = async (event) => {
   const weight = document.querySelector('#weight-signup').value.trim();
   const height = document.querySelector('#height-signup').value.trim();
   const age = document.querySelector('#age-signup').value.trim();
-  console.log(first_name, last_name, email, password, weight, height, age)
+  console.log(username, first_name, last_name, email, password, weight, height, age)
 
-  if (first_name && last_name && email && password && weight && height && age) {
+  if (username && first_name && last_name && email && password && weight && height && age) {
     console.log("validated")
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ first_name, last_name, email, password, weight, height, age }),
+      body: JSON.stringify({ username, first_name, last_name, email, password, weight, height, age }),
       headers: { 'Content-Type': 'application/json' },
     });
 
