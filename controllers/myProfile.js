@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
       height: req.session.height,
       age: req.session.age,
     };
-    res.render("MyProfile", { userData, loggedIn: req.session.loggedIn });
+    res.render("myProfile", { userData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

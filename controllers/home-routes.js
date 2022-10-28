@@ -43,7 +43,22 @@ router.get("/login", async (req, res) => {
 });
 
 
-router.get("/myProfile", async (req, res) => {
+// router.get("/myProfile", async (req, res) => {
+//   try {
+//     const myProfileData = await MyProfileData.findAll();
+//     const users = myProfileData.map((users) =>
+//       users.get({ plain: true })
+    
+//     );
+//     console.log(users)
+//     res.render("myProfile", { users , loggedIn: req.session.loggedIn });
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get("/workoutPage", async (req, res) => {
   try {
     const myProfileData = await MyProfileData.findAll();
     const users = myProfileData.map((users) =>
@@ -51,7 +66,7 @@ router.get("/myProfile", async (req, res) => {
     
     );
     console.log(users)
-    res.render("myProfile", { users , loggedIn: req.session.loggedIn });
+    res.render("workoutPage", { users , loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
