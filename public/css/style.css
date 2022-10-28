@@ -1,7 +1,13 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
+html,
+body {  
+  /* background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: lightgreen;
 }
 
 .main_header {
@@ -69,7 +75,7 @@ input {
   align-items: center;
 }
 
-/* .form-group {
+.form-group {
   text-align: center;
   margin: 5px;
   font-size: 25px;
