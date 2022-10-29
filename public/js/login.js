@@ -48,10 +48,16 @@ const signupFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.login-form')
-  .addEventListener('submit', loginFormHandler);
+var loginForm = document.querySelector('.login-form')
+loginForm.addEventListener('submit', loginFormHandler); 
+
+var signUpForm = document.querySelector('.signup-form')
+signUpForm.addEventListener('submit', signupFormHandler);
 
 document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  .querySelector('#signup-btn')
+  .addEventListener('click', () => {
+    loginForm.style.display = 'none'
+    signUpForm.style.display = 'inline-flex'
+  })
+

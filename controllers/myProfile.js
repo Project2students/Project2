@@ -26,8 +26,7 @@ router.get("/", async (req, res) => {
       height: req.session.height,
       age: req.session.age,
     };
-    // const
-    // fs.writeFileSync(path.join(__dirname)`index-${username}.JPG`);
+
     res.render("myProfile", { userData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
