@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
 
 const storage = multer.diskStorage({
   destination: "./public/images",
@@ -24,6 +26,7 @@ router.get("/", async (req, res) => {
       height: req.session.height,
       age: req.session.age,
     };
+
     res.render("myProfile", { userData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);

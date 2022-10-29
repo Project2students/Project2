@@ -1,10 +1,15 @@
 const router = require("express").Router();
 const CustomWorkout = require("../../models/CustomWorkout");
 
-// CREATE new user
-router.get("/", async (req, res) => {
+
+router.get("/:username", async (req, res) => {
   try {
-    const customWorkout = await CustomWorkout.findAll({});
+    console.log(req.params.username);
+    const customWorkout = await CustomWorkout.findAll({
+      where: {
+        username: req.params.username,
+      },
+    });
     res.status(200).json(customWorkout);
   } catch (err) {
     console.log(err);

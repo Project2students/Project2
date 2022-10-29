@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
 }
 
 .main_header {
@@ -47,11 +47,33 @@ body {
 .page-title {
   font-size: 40px;
   text-align: center;
+  color: white;
 }
 
 .profile {
   padding-top: 10px;
   text-align: center;
+}
+
+#logout {
+  color: white;
+}
+
+.signup-form {
+  display: none;
+}
+
+.signup-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 20px 0;
+  flex: 50%;
+  max-width: 500px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
 }
 
 .login-card {
@@ -62,10 +84,9 @@ body {
   flex: 50%;
   max-width: 500px;
   padding: 5px;
- */
   border-radius: 10px;
   background-color: transparent;
-  color: black;
+  color: white;
 }
 
 input {
@@ -127,7 +148,7 @@ nav {
 }
 
 nav a {
-  color: var(--dark);
+  color: white;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -358,6 +379,6 @@ input[name="myImage"] {
   fill: aqua;
 }
 
-#Deltoids {
-  background-color: blue;
+.workoutName {
+  display: flex;
 }
