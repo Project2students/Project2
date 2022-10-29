@@ -31,7 +31,7 @@
       {{#if loggedIn}}
         <a href="/myProfile">My Profile</a>
         <a href="/social">Social</a>
-        <a href="/workoutPage">Workouts</a>
+        <a href="/workoutPage?{{userData.username}}">Workouts</a>
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
         <a href="/login">Login</a>

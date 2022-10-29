@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
 
 const storage = multer.diskStorage({
   destination: "./public/images",
@@ -24,7 +26,9 @@ router.get("/", async (req, res) => {
       height: req.session.height,
       age: req.session.age,
     };
-    res.render("MyProfile", { userData, loggedIn: req.session.loggedIn });
+    // const
+    // fs.writeFileSync(path.join(__dirname)`index-${username}.JPG`);
+    res.render("myProfile", { userData, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

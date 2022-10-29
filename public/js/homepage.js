@@ -1,10 +1,11 @@
 let delete_btn = [];
 const unique = () => Math.floor(Math.random() * 10000);
-let workout_id = unique();
+
 const addBtn = document.querySelectorAll(".add");
 
 const list = document.querySelector(".list");
 const total_duration = document.querySelector(".total_duration");
+let workroutTitle = document.querySelector("#workoutName");
 
 let created_list_items = [];
 addBtn.forEach((el) =>
@@ -21,7 +22,7 @@ addBtn.forEach((el) =>
     );
     if (!exist.length) {
       created_list_items.push({
-        workout_id,
+        workout_id: "",
         exercise_id,
         username,
         description,
@@ -90,19 +91,26 @@ saveWorkout.addEventListener("click", () => {
     el.classList.remove("fa-circle-minus");
     el.classList.add("fa-circle-plus");
   });
-  workout_id = unique();
+  let workroutName = workroutTitle.value;
 
-  return fetch("http://localhost:3001/api/customWorkout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(created_list_items),
-  }).then((response) => {
-    created_list_items = [];
-    const fullbody_style = document.querySelectorAll("svg g g");
-    fullbody_style.forEach((el) => (el.style.fill = "black"));
+  created_list_items = created_list_items.map((el) => {
+    el.workout_id = workroutName;
+    return el;
   });
+  console.log(created_list_items);
+  workroutTitle.value = "";
+
+  // return fetch("http://localhost:3001/api/customWorkout", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(created_list_items),
+  // }).then((response) => {
+  //   created_list_items = [];
+  //   const fullbody_style = document.querySelectorAll("svg g g");
+  //   fullbody_style.forEach((el) => (el.style.fill = "black"));
+  // });
 });
 
 const all_muscleGroups = document.querySelectorAll("svg g g");
