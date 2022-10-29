@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
 html,
-body {  
-  /* background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
+body {
+  background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,7 +31,6 @@ body {
 
   margin: 10px 15px;
 }
-
 
 .row {
   display: flex;
@@ -63,9 +62,9 @@ body {
   flex: 50%;
   max-width: 500px;
   padding: 5px;
-  border: 7px double black;
+ */
   border-radius: 10px;
-  background-color: lightslategray;
+  background-color: transparent;
   color: black;
 }
 
@@ -264,7 +263,6 @@ img {
 }
 /* login page */
 .page-title {
-
   margin: 10px 0px;
 }
 
@@ -344,14 +342,11 @@ input[name="myImage"] {
   display: flex;
   flex-direction: column;
   border: black;
-  
 }
 
 .profile-info {
   display: flex;
-
 }
-
 
 input[name="myImage"] {
   background-color: blueviolet;
