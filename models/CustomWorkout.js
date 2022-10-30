@@ -1,39 +1,49 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class ExercisesData extends Model {}
+class CustomWorkout extends Model {}
 
-ExercisesData.init(
+CustomWorkout.init(
   {
+    workout_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     exercise_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: false,
     },
-    muscle_group: {
+    username: {
       type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
     exercise_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
     duration: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    rest_time: {
+    rest: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     calories: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
+    },
+    total_time: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    total_calories: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
     },
   },
   {
@@ -41,8 +51,8 @@ ExercisesData.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "exercisesData",
+    modelName: "customWorkout",
   }
 );
 
-module.exports = ExercisesData;
+module.exports = CustomWorkout;

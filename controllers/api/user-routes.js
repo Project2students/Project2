@@ -3,12 +3,9 @@ const User = require("../../models/User");
 
 // CREATE new user
 router.post("/", async (req, res) => {
+  console.log("posting new user", req.body)
   try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    });
+    const dbUserData = await User.create(req.body);
 
     req.session.save(() => {
       req.session.loggedIn = true;
@@ -48,6 +45,14 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.username = dbUserData.username;
+      req.session.first_name = dbUserData.first_name;
+      req.session.last_name = dbUserData.last_name;
+      req.session.weight = dbUserData.weight;
+      req.session.height = dbUserData.height;
+      req.session.age = dbUserData.age;
+
+      // const username = req.session.username;
 
       res
         .status(200)
@@ -63,11 +68,11 @@ router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({});
     res.status(200).json(userData);
-  }  catch (err) {
+  } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
-})
+});
 
 // Logout
 router.post("/logout", (req, res) => {

@@ -12,4 +12,17 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  console.log(JSON.stringify(data));
+  ExercisesData.bulkCreate(data)
+    .then((response) => {
+      console.log("Data was posted successfully");
+      res.json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 module.exports = router;
