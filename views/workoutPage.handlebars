@@ -1,29 +1,34 @@
- <div class="workout-container">  
-  <div class="main-title">Workout timer</div>  
-  <div class="timer-settings-container">  
-   <div class="pomodoro-title">Work</div>  
-   <div class="break-title">Break</div>  
-   <div class="pomodoro-container">  
-    <button aria-label="Decrease Pomodoro timer length" class="decrementPomodoroTimer" onclick="decrementPomodoroTimer()"><i class="fa fa-minus"></i></button>  
-    <div class="pomodoro-timer"></div>  
-    <button aria-label="Increase Pomodoro timer length" class="incrementPomodoroTimer" onclick="incrementPomodoroTimer()"><i class="fa fa-plus"></i></button>  
-   </div>  
-   <div class="break-container">  
-    <button aria-label="Decrease break timer length" class="decrementBreakTimer" onclick="decrementBreakTimer()"><i class="fa fa-minus"></i></button>  
-    <div class="break-timer"></div>  
-    <button aria-label="Increase break timer length" class="incrementBreakTimer" onclick="incrementBreakTimer()"><i class="fa fa-plus"></i></button>  
-   </div>  
-  </div>  
-  <div class="timer-main-container">  
-  </div>  
-  <div class="timer-description">Ready to work?</div>  
-  <div class="controls-container">  
-   <button class="button-start" onclick="startTimer()">Start <i class="fa fa-play"></i></button>  
-   <button class="button-pause" onclick="pauseTimer()">Pause <i class="fa fa-pause"></i></button>  
-   <button class="button-reset" onclick="resetTimer()">Reset <i class="fa fa-refresh"></i></button>  
-  </div>  
- </div>  
+<div class="workout_Page">
 
+  <ul id="workoutList">
+    {{#each results as |result|}}
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        href="#collapseExample-{{result.0.id}}"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample-{{result.0.id}}"
+      ><h2>{{result.0.workout_id}}
+          | Total: Calories:
+          {{result.0.total_calories}}cal | Duration:
+          {{result.0.total_time}}s</h2>
+      </a>
+      {{#each result as |innerresult|}}
+        <div class="collapse" id="collapseExample-{{result.0.id}}">
+          <div class="card card-body">
+            <p>Exercise:
+              {{innerresult.exercise_name}}
+              | Duration:
+              {{innerresult.duration}}s | Calories:
+              {{innerresult.calories}}cal</p>
+          </div>
+        </div>
+      {{/each}}
+    {{/each}}
+  </ul>
+</div>
 
-<script src="./index.js"></script>
-<script src="./js/workoutPage.js" type="application/javascript"></script>
+{{! <script src="https://d3js.org/d3.v7.min.js"></script> }}
+<script src="./index.js" type="application/json"></script>
+<script src="/js/workoutPage.js" type="application/javascript"></script>
