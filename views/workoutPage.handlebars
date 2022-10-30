@@ -1,9 +1,34 @@
+<div class="workout_Page">
 
-      <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/workout.css">
- 
+  <ul id="workoutList">
+    {{#each results as |result|}}
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        href="#collapseExample-{{result.0.id}}"
+        role="button"
+        aria-expanded="false"
+        aria-controls="collapseExample-{{result.0.id}}"
+      ><h2>{{result.0.workout_id}}
+          | Total: Calories:
+          {{result.0.total_calories}}cal | Duration:
+          {{result.0.total_time}}s</h2>
+      </a>
+      {{#each result as |innerresult|}}
+        <div class="collapse" id="collapseExample-{{result.0.id}}">
+          <div class="card card-body">
+            <p>Exercise:
+              {{innerresult.exercise_name}}
+              | Duration:
+              {{innerresult.duration}}s | Calories:
+              {{innerresult.calories}}cal</p>
+          </div>
+        </div>
+      {{/each}}
+    {{/each}}
+  </ul>
+</div>
 
-</html>
-<script src="https://d3js.org/d3.v7.min.js"></script>
+{{! <script src="https://d3js.org/d3.v7.min.js"></script> }}
 <script src="./index.js" type="application/json"></script>
-<script src="./controllers/api/timer.js" type="application/javascript"></script>
+<script src="/js/workoutPage.js" type="application/javascript"></script>
