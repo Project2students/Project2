@@ -11,17 +11,6 @@ router.get("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
-// router.post("/", async (req, res) => {
-//   const data = req.body;
-//   console.log(data);
-//   try {
-//     const exercisesData = await ExercisesData.bulkCreate([...data]);
-//     // if the dish is successfully created, the new response will be returned as json
-//     res.status(200).json(exercisesData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
 
 router.post("/", (req, res) => {
   const data = req.body;

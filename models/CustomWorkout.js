@@ -33,6 +33,18 @@ CustomWorkout.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    calories: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    total_time: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    total_calories: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     sequelize,

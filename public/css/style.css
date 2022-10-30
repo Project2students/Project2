@@ -20,6 +20,7 @@ body {
   width: 75px;
   height: 75px;
   transition: all 0.3s;
+  border-radius: 50%;
 }
 
 .wrapper {
@@ -347,8 +348,8 @@ input[name="myImage"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
   margin: 0px 0.5%;
+  padding: 10px auto;
 }
 
 .active {

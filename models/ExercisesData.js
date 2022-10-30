@@ -31,6 +31,10 @@ ExercisesData.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    calories: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     sequelize,

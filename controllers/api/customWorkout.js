@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const CustomWorkout = require("../../models/CustomWorkout");
 
-
 router.get("/:username", async (req, res) => {
   try {
     console.log(req.params.username);
