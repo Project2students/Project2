@@ -4,18 +4,18 @@ body {
   background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jng");
 
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: lightgreen; */
+  background-image: linear-gradient(#0e0b16, #a329ca);
 }
 
 .main_header {
   position: absolute;
   top: 10px;
   right: 15px;
-  color: rgb(239, 23, 200);
+  color: #e7dfdd;
 }
 
 .gifs {
@@ -31,7 +31,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-
   margin: 10px 15px;
 }
 
@@ -50,7 +49,7 @@ body {
 .page-title {
   font-size: 40px;
   text-align: center;
-  color: white;
+  color: #e7dfdd;
 }
 
 .profile {
@@ -59,7 +58,7 @@ body {
 }
 
 #logout {
-  color: white;
+  color: #e7dfdd;
 }
 
 .signup-form {
@@ -76,7 +75,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: white;
+  color: #e7dfdd;
 }
 
 .login-card {
@@ -89,7 +88,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: white;
+  color: #e7dfdd;
 }
 
 input {
@@ -115,7 +114,7 @@ input {
   border-radius: 10px;
 }
 .exercise-item:hover {
-  background-color: antiquewhite;
+  background-color: purple;
 }
 
 .exercise-item .btn {
@@ -123,8 +122,8 @@ input {
 }
 
 .exercise_name {
-  width: fit-content;
-  margin-bottom: 13.8px;
+  width: 80%;
+  color: #e7dfdd;
 }
 
 .gifs:hover {
@@ -144,7 +143,6 @@ input {
 
 .add:hover {
   transform: scale(1.2);
-  background-color: antiquewhite;
 }
 
 nav {
@@ -152,15 +150,18 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #e7dfdd;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
 }
 
+.logout:hover {
+  color: purple;
+}
+
 nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+  color: purple;
 }
 
 .btn-no-style {
@@ -255,7 +256,7 @@ img {
 
   margin-top: 25px;
   font-size: 1.8rem;
-  background-color: royalblue;
+  /* background-color: royalblue; */
   padding: 2px 5px;
   border-radius: 5px;
   color: #fff;
@@ -276,6 +277,7 @@ img {
   padding: 5px 10px;
   padding-bottom: 40px;
   min-height: 40px;
+  color: #e7dfdd;
 }
 
 .workout_list_item {
@@ -314,13 +316,14 @@ img {
   height: 500px;
 }
 
-.workputPlanHeader {
-  text-align: center;
+.workoutPlanHeader {
+  color: #e7dfdd;
 }
 
 .selectionHeader {
   width: 100%;
   text-align: center;
+  color: #e7dfdd;
 }
 
 form {
@@ -364,6 +367,11 @@ input[name="myImage"] {
   align-items: center;
 }
 
+.profileHeader {
+  margin-left: 25px;
+  color: #e7dfdd;
+}
+
 .profile-data {
   display: flex;
   flex-direction: column;
@@ -387,11 +395,118 @@ input[name="myImage"] {
 .workoutName {
   display: flex;
 }
-@media screen and (max-width: 768px) {
-  header,
-  section,
-  footer,
-  content {
-    flex-direction: column;
-  }
-}
+
+
+/* @import url(https://fonts.googleapis.com/css?family=Lato);  
+ body {  
+  font-family: 'Lato', Arial, sans-serif;  
+  font-size: 16px;  
+  display: flex;  
+  align-items: center;  
+  justify-content: center;  
+  height: 100vh;  
+  margin: 0;  
+  padding: 0;  
+ }   */
+ /* Layout */  
+ .workout-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px; 
+ }  
+ .main-title {  
+  padding-bottom: 40px;  
+  text-align: center;  
+  font-size: 2.5em;  
+  color: #e7dfdd;
+ }  
+ .timer-settings-container {  
+  display: flex;  
+  flex-wrap: wrap;  
+  padding-bottom: 30px;  
+  color: #e7dfdd;
+ }  
+ .timer-main-container {  
+  text-align: center;  
+  padding-bottom: 10px;  
+  font-size: 3em;  
+  color: #e7dfdd;
+ }  
+ .timer-description {  
+  text-align: center;  
+  padding-bottom: 40px;  
+  color: #e7dfdd;
+ }  
+ .pomodoro-title, .break-title, .pomodoro-container, .break-container {  
+  width: 50%;  
+ }  
+ .pomodoro-title, .break-title {  
+  font-size: 1em;  
+  text-transform: uppercase;  
+  letter-spacing: calc(1em / 10);  
+  text-align: center;  
+ }  
+ .pomodoro-container, .break-container {  
+  display: flex;  
+  align-items: center;  
+  padding-top: 10px;  
+  font-size: 1.5em;  
+  justify-content: center;  
+ }  
+ .break-timer, .pomodoro-timer {  
+  padding: 0 20px;  
+ }  
+ .controls-container {  
+  text-align: center;  
+  button {  
+   margin: 0 10px;  
+   font-size: 1.125em;  
+  }  
+  button:first-child {  
+   margin-left: 0;  
+  }  
+  button:last-child {  
+   margin-right: 0;  
+  }  
+ }  
+ /* Button styling */  
+ button {  
+  background-color: lighten(lightslategray, 30%);  
+  border: none;  
+  padding: 20px;  
+  font-size: 1em;  
+  &:hover {  
+   background-color: lighten(lightslategray, 40%);  
+   cursor: pointer;  
+  }  
+ }  
+ button:disabled {  
+  background-color: #ccc;  
+ }  
+ button:disabled:hover {  
+  background-color: #ccc;  
+  cursor: not-allowed;  
+ }  
+ .button-start {  
+  background-color: mediumseagreen;  
+  &:hover {  
+   background-color: lighten(mediumseagreen, 20%);  
+  }  
+ }  
+ .button-pause {  
+  background-color: lighten(firebrick, 20%);  
+  &:hover {  
+   background-color: lighten(firebrick, 40%);  
+  }  
+ }  
+ .button-reset {  
+  background-color: cornflowerblue;  
+  &:hover {  
+   background-color: lighten(cornflowerblue, 20%);  
+  }  
+ }  
+ /* Icon styling */  
+ .controls-container .fa {  
+  padding-left: 5px;  
+ }  
