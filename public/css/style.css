@@ -1,20 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
 html,
 body {
-  background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
+  background-image: url("https://img.freepik.com/free-vector/mockup-empty-room-with-brick-wall-two-windows-blue-carpet-vase-bottle-water_1441-2444.jpg?size=626&ext=jpg");  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: linear-gradient(#0e0b16, #a329ca);
 }
 
 .main_header {
   position: absolute;
   top: 10px;
   right: 15px;
-  color: #e7dfdd;
+  color: black;
 }
 
 .gifs {
@@ -57,7 +55,8 @@ body {
 }
 
 #logout {
-  color: #e7dfdd;
+  color: black;
+  padding: 14px 20px;
 }
 
 .signup-form {
@@ -113,7 +112,7 @@ input {
   border-radius: 10px;
 }
 .exercise-item:hover {
-  background-color: purple;
+  background-color: rgb(71, 153, 181);
 }
 
 .exercise-item .btn {
@@ -122,7 +121,7 @@ input {
 
 .exercise_name {
   width: 80%;
-  color: #e7dfdd;
+  color: black;
 }
 
 .gifs:hover {
@@ -149,7 +148,7 @@ nav {
 }
 
 nav a {
-  color: #e7dfdd;
+  color: black;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -257,7 +256,7 @@ img {
   /* background-color: royalblue; */
   padding: 2px 5px;
   border-radius: 5px;
-  color: #fff;
+  color: black;
 }
 
 .delete_btn {
@@ -275,7 +274,7 @@ img {
   padding: 5px 10px;
   padding-bottom: 40px;
   min-height: 40px;
-  color: #e7dfdd;
+  color: black;
 }
 
 .workout_list_item {
@@ -315,13 +314,13 @@ img {
 }
 
 .workoutPlanHeader {
-  color: #e7dfdd;
+  color: black;
 }
 
 .selectionHeader {
   width: 100%;
   text-align: center;
-  color: #e7dfdd;
+  color: black;
 }
 
 form {
@@ -367,7 +366,7 @@ input[name="myImage"] {
 
 .profileHeader {
   margin-left: 25px;
-  color: #e7dfdd;
+  color: black;
 }
 
 .profile-data {
@@ -393,20 +392,7 @@ input[name="myImage"] {
 .workoutName {
   display: flex;
 }
-
-
-/* @import url(https://fonts.googleapis.com/css?family=Lato);  
- body {  
-  font-family: 'Lato', Arial, sans-serif;  
-  font-size: 16px;  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  height: 100vh;  
-  margin: 0;  
-  padding: 0;  
- }   */
- /* Layout */  
+ 
  .workout-container { 
   display: flex;
   flex-direction: column;
@@ -504,7 +490,71 @@ input[name="myImage"] {
    background-color: lighten(cornflowerblue, 20%);  
   }  
  }  
- /* Icon styling */  
+ /* Icon styling   */
  .controls-container .fa {  
   padding-left: 5px;  
  }  
+
+
+ @media only screen and (max-width: 390px) { 
+    .main_header {
+      position: static;
+      text-align: center;
+    }
+    .wrapper-3 {
+      display: none;
+   }
+    .main-wrapper {
+      flex-direction: column;
+   }
+    .wrapper-2 {
+      display: contents;
+      text-align: center;
+    }
+    .workoutName {
+      justify-content: center;
+    }
+    .wrapper {
+      width: fit-content;
+    }
+    .body nav {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .exercise_name {
+      width: auto;
+    }
+    .exercise-item {
+      height: 50px;
+      padding: 0px 20px;
+    }
+ }
+
+ @media only screen and (max-width: 768px) { 
+  .main_header {
+    position: static;
+    text-align: center;
+  }
+  .wrapper-3 {
+    display: none;
+ }
+  .main-wrapper {
+    flex-direction: column;
+ }
+  .wrapper-2 {
+    display: contents;
+    text-align: center;
+  }
+  .workoutName {
+    justify-content: center;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+  .body nav {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
