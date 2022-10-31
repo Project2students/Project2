@@ -2,13 +2,11 @@
 html,
 body {
   background-image: url("https://img.freepik.com/free-vector/mockup-empty-room-with-brick-wall-two-windows-blue-carpet-vase-bottle-water_1441-2444.jpg?size=626&ext=jpg");
-
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .main_header {
@@ -17,7 +15,7 @@ body {
   right: 15px;
   color: white;
   text-shadow: 3px 3px green;
-  font-style:italic;
+  font-style: italic;
 }
 
 .gifs {
@@ -60,7 +58,8 @@ body {
 }
 
 #logout {
-  color: #e7dfdd;
+  color: black;
+  padding: 14px 20px;
 }
 
 .signup-form {
@@ -125,7 +124,7 @@ input {
 
 .exercise_name {
   width: 80%;
-  color: #e7dfdd;
+  color: black;
 }
 
 .gifs:hover {
@@ -153,7 +152,7 @@ nav {
 }
 
 nav a {
-  color: #e7dfdd;
+  color: black;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -262,7 +261,7 @@ img {
   /* background-color: royalblue; */
   padding: 2px 5px;
   border-radius: 5px;
-  color: #fff;
+  color: black;
 }
 
 .delete_btn {
@@ -280,7 +279,7 @@ img {
   padding: 5px 10px;
   padding-bottom: 40px;
   min-height: 40px;
-  color: #e7dfdd;
+  color: black;
 }
 
 .workout_list_item {
@@ -326,7 +325,7 @@ img {
 .selectionHeader {
   width: 100%;
   text-align: center;
-  color: #e7dfdd;
+  color: black;
 }
 
 form {
@@ -401,117 +400,173 @@ input[name="myImage"] {
   display: flex;
 }
 
-
-/* @import url(https://fonts.googleapis.com/css?family=Lato);  
- body {  
-  font-family: 'Lato', Arial, sans-serif;  
-  font-size: 16px;  
-  display: flex;  
-  align-items: center;  
-  justify-content: center;  
-  height: 100vh;  
-  margin: 0;  
-  padding: 0;  
- }   */
- /* Layout */  
- .workout-container { 
+.workout-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px; 
- }  
- .main-title {  
-  padding-bottom: 40px;  
-  text-align: center;  
-  font-size: 2.5em;  
+  border-radius: 10px;
+}
+.main-title {
+  padding-bottom: 40px;
+  text-align: center;
+  font-size: 2.5em;
   color: #e7dfdd;
- }  
- .timer-settings-container {  
-  display: flex;  
-  flex-wrap: wrap;  
-  padding-bottom: 30px;  
+}
+.timer-settings-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30px;
   color: #e7dfdd;
- }  
- .timer-main-container {  
-  text-align: center;  
-  padding-bottom: 10px;  
-  font-size: 3em;  
+}
+.timer-main-container {
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 3em;
   color: #e7dfdd;
- }  
- .timer-description {  
-  text-align: center;  
-  padding-bottom: 40px;  
+}
+.timer-description {
+  text-align: center;
+  padding-bottom: 40px;
   color: #e7dfdd;
- }  
- .pomodoro-title, .break-title, .pomodoro-container, .break-container {  
-  width: 50%;  
- }  
- .pomodoro-title, .break-title {  
-  font-size: 1em;  
-  text-transform: uppercase;  
-  letter-spacing: calc(1em / 10);  
-  text-align: center;  
- }  
- .pomodoro-container, .break-container {  
-  display: flex;  
-  align-items: center;  
-  padding-top: 10px;  
-  font-size: 1.5em;  
-  justify-content: center;  
- }  
- .break-timer, .pomodoro-timer {  
-  padding: 0 20px;  
- }  
- .controls-container {  
-  text-align: center;  
-  button {  
-   margin: 0 10px;  
-   font-size: 1.125em;  
-  }  
-  button:first-child {  
-   margin-left: 0;  
-  }  
-  button:last-child {  
-   margin-right: 0;  
-  }  
- }  
- /* Button styling */  
- button {  
-  background-color: lighten(lightslategray, 30%);  
-  border: none;  
-  padding: 20px;  
-  font-size: 1em;  
-  &:hover {  
-   background-color: lighten(lightslategray, 40%);  
-   cursor: pointer;  
-  }  
- }  
- button:disabled {  
-  background-color: #ccc;  
- }  
- button:disabled:hover {  
-  background-color: #ccc;  
-  cursor: not-allowed;  
- }  
- .button-start {  
-  background-color: mediumseagreen;  
-  &:hover {  
-   background-color: lighten(mediumseagreen, 20%);  
-  }  
- }  
- .button-pause {  
-  background-color: lighten(firebrick, 20%);  
-  &:hover {  
-   background-color: lighten(firebrick, 40%);  
-  }  
- }  
- .button-reset {  
-  background-color: cornflowerblue;  
-  &:hover {  
-   background-color: lighten(cornflowerblue, 20%);  
-  }  
- }  
- /* Icon styling */  
- .controls-container .fa {  
-  padding-left: 5px;  
- }  
+}
+.pomodoro-title,
+.break-title,
+.pomodoro-container,
+.break-container {
+  width: 50%;
+}
+.pomodoro-title,
+.break-title {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: calc(1em / 10);
+  text-align: center;
+}
+.pomodoro-container,
+.break-container {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  font-size: 1.5em;
+  justify-content: center;
+}
+.break-timer,
+.pomodoro-timer {
+  padding: 0 20px;
+}
+.controls-container {
+  text-align: center;
+  button {
+    margin: 0 10px;
+    font-size: 1.125em;
+  }
+  button:first-child {
+    margin-left: 0;
+  }
+  button:last-child {
+    margin-right: 0;
+  }
+}
+/* Button styling */
+button {
+  background-color: lighten(lightslategray, 30%);
+  border: none;
+  padding: 20px;
+  font-size: 1em;
+  &:hover {
+    background-color: lighten(lightslategray, 40%);
+    cursor: pointer;
+  }
+}
+button:disabled {
+  background-color: #ccc;
+}
+button:disabled:hover {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.button-start {
+  background-color: mediumseagreen;
+  &:hover {
+    background-color: lighten(mediumseagreen, 20%);
+  }
+}
+.button-pause {
+  background-color: lighten(firebrick, 20%);
+  &:hover {
+    background-color: lighten(firebrick, 40%);
+  }
+}
+.button-reset {
+  background-color: cornflowerblue;
+  &:hover {
+    background-color: lighten(cornflowerblue, 20%);
+  }
+}
+/* Icon styling   */
+.controls-container .fa {
+  padding-left: 5px;
+}
+
+@media only screen and (max-width: 390px) {
+  .main_header {
+    position: static;
+    text-align: center;
+  }
+  .wrapper-3 {
+    display: none;
+  }
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .wrapper-2 {
+    display: contents;
+    text-align: center;
+  }
+  .workoutName {
+    justify-content: center;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+  .body nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .exercise_name {
+    width: auto;
+  }
+  .exercise-item {
+    height: 50px;
+    padding: 0px 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_header {
+    position: static;
+    text-align: center;
+  }
+  .wrapper-3 {
+    display: none;
+  }
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .wrapper-2 {
+    display: contents;
+    text-align: center;
+  }
+  .workoutName {
+    justify-content: center;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+  .body nav {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
