@@ -58,7 +58,7 @@ body {
 }
 
 #logout {
-  color: black;
+  color: white;
   padding: 14px 20px;
 }
 
@@ -76,7 +76,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: #e7dfdd;
+  color: black;
 }
 
 .login-card {
@@ -89,7 +89,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: #e7dfdd;
+  color: black;
 }
 
 input {
@@ -152,13 +152,13 @@ nav {
 }
 
 nav a {
-  color: black;
+  color: white;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
 }
 
-.logout:hover {
+#logout:hover {
   color: rgb(36, 159, 159);
 }
 
@@ -294,6 +294,7 @@ img {
 /* login page */
 .page-title {
   margin: 10px 0px;
+  color: black;
 }
 
 .profile_wrapper {
@@ -541,6 +542,12 @@ button:disabled:hover {
     height: 50px;
     padding: 0px 20px;
   }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -568,5 +575,11 @@ button:disabled:hover {
     margin-bottom: 0;
     display: flex;
     justify-content: center;
+  }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
   }
 }
