@@ -1,21 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
 html,
 body {
-  background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jng");
+  background-image: url("https://img.freepik.com/free-vector/mockup-empty-room-with-brick-wall-two-windows-blue-carpet-vase-bottle-water_1441-2444.jpg?size=626&ext=jpg");
 
   background-repeat: no-repeat;
   background-size: cover; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: linear-gradient(#0e0b16, #a329ca);
+
 }
 
 .main_header {
   position: absolute;
   top: 10px;
   right: 15px;
-  color: #e7dfdd;
+  color: white;
+  text-shadow: 3px 3px green;
+  font-style:italic;
 }
 
 .gifs {
@@ -114,7 +116,7 @@ input {
   border-radius: 10px;
 }
 .exercise-item:hover {
-  background-color: purple;
+  background-color: rgb(71, 153, 181);
 }
 
 .exercise-item .btn {
@@ -147,6 +149,7 @@ input {
 
 nav {
   margin-bottom: 25px;
+  background-color: black;
 }
 
 nav a {
@@ -157,11 +160,11 @@ nav a {
 }
 
 .logout:hover {
-  color: purple;
+  color: rgb(36, 159, 159);
 }
 
 nav a:hover {
-  color: purple;
+  color: rgb(36, 159, 159);
 }
 
 .btn-no-style {
@@ -317,7 +320,7 @@ img {
 }
 
 .workoutPlanHeader {
-  color: #e7dfdd;
+  color: black;
 }
 
 .selectionHeader {
@@ -369,7 +372,9 @@ input[name="myImage"] {
 
 .profileHeader {
   margin-left: 25px;
-  color: #e7dfdd;
+  color: white;
+  text-shadow: 3px 3px green;
+  text-align: center;
 }
 
 .profile-data {
@@ -383,7 +388,7 @@ input[name="myImage"] {
 }
 
 input[name="myImage"] {
-  background-color: blueviolet;
+  background-color: yellowgreen;
 }
 
 .activated {
