@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
 html,
 body {
-  background-image: url("https://img.freepik.com/free-vector/mockup-empty-room-with-brick-wall-two-windows-blue-carpet-vase-bottle-water_1441-2444.jpg?size=626&ext=jpg");
+  background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -14,7 +14,7 @@ body {
   top: 10px;
   right: 15px;
   color: white;
-  text-shadow: 3px 3px green;
+  text-shadow: 3px 3px deeppink;
   font-style: italic;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 #logout {
-  color: black;
+  color: white;
   padding: 14px 20px;
 }
 
@@ -152,7 +152,7 @@ nav {
 }
 
 nav a {
-  color: black;
+  color: white;
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -372,7 +372,7 @@ input[name="myImage"] {
 .profileHeader {
   margin-left: 25px;
   color: white;
-  text-shadow: 3px 3px green;
+  text-shadow: 3px 3px deeppink;
   text-align: center;
 }
 
@@ -387,7 +387,7 @@ input[name="myImage"] {
 }
 
 input[name="myImage"] {
-  background-color: yellowgreen;
+  background-color: grey;
 }
 
 .activated {
@@ -541,6 +541,15 @@ button:disabled:hover {
     height: 50px;
     padding: 0px 20px;
   }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
+  }
+  #workoutList {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -568,5 +577,11 @@ button:disabled:hover {
     margin-bottom: 0;
     display: flex;
     justify-content: center;
+  }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
   }
 }
