@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxygen|Rubik:300);
 html,
 body {
-  background-image: url("https://img.freepik.com/free-vector/mockup-empty-room-with-brick-wall-two-windows-blue-carpet-vase-bottle-water_1441-2444.jpg?size=626&ext=jpg");
+  background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -14,7 +14,7 @@ body {
   top: 10px;
   right: 15px;
   color: white;
-  text-shadow: 3px 3px green;
+  text-shadow: 3px 3px deeppink;
   font-style: italic;
 }
 
@@ -147,7 +147,6 @@ input {
 }
 
 nav {
-  margin-bottom: 25px;
   background-color: black;
 }
 
@@ -248,8 +247,11 @@ img {
 .main-wrapper {
   display: flex;
   width: 100%;
-  margin-bottom: 50px;
+  margin-top: 20px;
   justify-content: space-evenly;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .total_duration {
@@ -321,12 +323,16 @@ img {
 
 .workoutPlanHeader {
   color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 .selectionHeader {
   width: 100%;
   text-align: center;
   color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 form {
@@ -373,7 +379,8 @@ input[name="myImage"] {
 .profileHeader {
   margin-left: 25px;
   color: white;
-  text-shadow: 3px 3px green;
+  font-family: "roboto";
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -381,6 +388,7 @@ input[name="myImage"] {
   display: flex;
   flex-direction: column;
   border: black;
+  text-shadow: 0 0 white;
 }
 
 .profile-info {
@@ -388,7 +396,7 @@ input[name="myImage"] {
 }
 
 input[name="myImage"] {
-  background-color: yellowgreen;
+  background-color: grey;
 }
 
 .activated {
@@ -401,112 +409,24 @@ input[name="myImage"] {
   display: flex;
 }
 
-.workout-container {
+.timer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 10px;
+  justify-content: center;
+  position: relative;
 }
-.main-title {
-  padding-bottom: 40px;
-  text-align: center;
-  font-size: 2.5em;
-  color: #e7dfdd;
-}
-.timer-settings-container {
+
+.timerDisplay {
+  padding: 40px 0;
+  font-size: 40px;
   display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 30px;
-  color: #e7dfdd;
-}
-.timer-main-container {
-  text-align: center;
-  padding-bottom: 10px;
-  font-size: 3em;
-  color: #e7dfdd;
-}
-.timer-description {
-  text-align: center;
-  padding-bottom: 40px;
-  color: #e7dfdd;
-}
-.pomodoro-title,
-.break-title,
-.pomodoro-container,
-.break-container {
-  width: 50%;
-}
-.pomodoro-title,
-.break-title {
-  font-size: 1em;
-  text-transform: uppercase;
-  letter-spacing: calc(1em / 10);
-  text-align: center;
-}
-.pomodoro-container,
-.break-container {
-  display: flex;
-  align-items: center;
-  padding-top: 10px;
-  font-size: 1.5em;
   justify-content: center;
 }
-.break-timer,
-.pomodoro-timer {
-  padding: 0 20px;
-}
-.controls-container {
-  text-align: center;
-  button {
-    margin: 0 10px;
-    font-size: 1.125em;
-  }
-  button:first-child {
-    margin-left: 0;
-  }
-  button:last-child {
-    margin-right: 0;
-  }
-}
-/* Button styling */
-button {
-  background-color: lighten(lightslategray, 30%);
-  border: none;
-  padding: 20px;
-  font-size: 1em;
-  &:hover {
-    background-color: lighten(lightslategray, 40%);
-    cursor: pointer;
-  }
-}
-button:disabled {
-  background-color: #ccc;
-}
-button:disabled:hover {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-.button-start {
-  background-color: mediumseagreen;
-  &:hover {
-    background-color: lighten(mediumseagreen, 20%);
-  }
-}
-.button-pause {
-  background-color: lighten(firebrick, 20%);
-  &:hover {
-    background-color: lighten(firebrick, 40%);
-  }
-}
-.button-reset {
-  background-color: cornflowerblue;
-  &:hover {
-    background-color: lighten(cornflowerblue, 20%);
-  }
-}
-/* Icon styling   */
-.controls-container .fa {
-  padding-left: 5px;
+
+#start,
+#pause,
+#reset {
+  margin: 5px;
+  width: 20%;
 }
 
 @media only screen and (max-width: 390px) {
@@ -548,6 +468,9 @@ button:disabled:hover {
   .profile_wrapper {
     width: fit-content;
   }
+  #workoutList {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -582,4 +505,8 @@ button:disabled:hover {
   .profile_wrapper {
     width: fit-content;
   }
+}
+
+h4 {
+  font-family: fangsong;
 }
