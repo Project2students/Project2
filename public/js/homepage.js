@@ -2,7 +2,7 @@ let delete_btn = [];
 let total_time = 0;
 let total_calories = 0;
 
-const addBtn = document.querySelectorAll(".add");
+const addBtn = document.querySelectorAll("i");
 
 const list = document.querySelector(".list");
 const total_duration = document.querySelector(".total_duration");
@@ -18,7 +18,7 @@ addBtn.forEach((el) =>
     const rest = parseInt(e.target.dataset.rest_time);
     const calories = parseInt(e.target.dataset.calories);
     const exercise_id = parseInt(e.target.dataset.exercise_id);
-    const listItem = e.target.parentNode.parentNode;
+    const listItem = e.target.parentNode;
     const exist = created_list_items.filter(
       (el) => el.exercise_name == exercise_name
     );
