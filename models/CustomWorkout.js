@@ -6,7 +6,7 @@ class CustomWorkout extends Model {}
 CustomWorkout.init(
   {
     workout_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     exercise_id: {
@@ -30,6 +30,18 @@ CustomWorkout.init(
       allowNull: false,
     },
     rest: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    calories: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    total_time: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    total_calories: {
       type: DataTypes.INTEGER,
       allowNull: true,
     },
