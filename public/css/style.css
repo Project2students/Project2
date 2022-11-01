@@ -8,13 +8,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: lightgreen; */
 }
 
 .main_header {
   position: absolute;
   top: 10px;
   right: 15px;
+  color: white;
+  text-shadow: 3px 3px deeppink;
+  font-style: italic;
 }
 
 .gifs {
@@ -30,7 +32,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-
   margin: 10px 15px;
 }
 
@@ -49,7 +50,7 @@ body {
 .page-title {
   font-size: 40px;
   text-align: center;
-  color: white;
+  color: #e7dfdd;
 }
 
 .profile {
@@ -59,6 +60,7 @@ body {
 
 #logout {
   color: white;
+  padding: 14px 20px;
 }
 
 .signup-form {
@@ -75,7 +77,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: white;
+  color: #e7dfdd;
 }
 
 .login-card {
@@ -88,7 +90,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: white;
+  color: #e7dfdd;
 }
 
 input {
@@ -114,7 +116,7 @@ input {
   border-radius: 10px;
 }
 .exercise-item:hover {
-  background-color: antiquewhite;
+  background-color: rgb(71, 153, 181);
 }
 
 .exercise-item .btn {
@@ -123,6 +125,7 @@ input {
 
 .exercise_name {
   width: 80%;
+  color: black;
 }
 
 .gifs:hover {
@@ -142,11 +145,10 @@ input {
 
 .add:hover {
   transform: scale(1.2);
-  background-color: antiquewhite;
 }
 
 nav {
-  margin-bottom: 25px;
+  background-color: black;
 }
 
 nav a {
@@ -156,9 +158,12 @@ nav a {
   text-align: center;
 }
 
+.logout:hover {
+  color: rgb(36, 159, 159);
+}
+
 nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+  color: rgb(36, 159, 159);
 }
 
 .btn-no-style {
@@ -223,6 +228,7 @@ img {
   align-items: center;
   padding: 30px auto;
   border-radius: 10px;
+  display: flex;
 }
 
 .wrapper-2 {
@@ -242,8 +248,11 @@ img {
 .main-wrapper {
   display: flex;
   width: 100%;
-  margin-bottom: 50px;
+  margin-top: 20px;
   justify-content: space-evenly;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .total_duration {
@@ -252,10 +261,10 @@ img {
 
   margin-top: 25px;
   font-size: 1.8rem;
-  background-color: royalblue;
+  /* background-color: royalblue; */
   padding: 2px 5px;
   border-radius: 5px;
-  color: #fff;
+  color: black;
 }
 
 .delete_btn {
@@ -273,6 +282,7 @@ img {
   padding: 5px 10px;
   padding-bottom: 40px;
   min-height: 40px;
+  color: black;
 }
 
 .workout_list_item {
@@ -311,13 +321,18 @@ img {
   height: 500px;
 }
 
-.workputPlanHeader {
-  text-align: center;
+.workoutPlanHeader {
+  color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 .selectionHeader {
   width: 100%;
   text-align: center;
+  color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 form {
@@ -361,10 +376,19 @@ input[name="myImage"] {
   align-items: center;
 }
 
+.profileHeader {
+  margin-left: 25px;
+  color: white;
+  font-family: "roboto";
+  font-weight: bolder;
+  text-align: center;
+}
+
 .profile-data {
   display: flex;
   flex-direction: column;
   border: black;
+  text-shadow: 0 0 white;
 }
 
 .profile-info {
@@ -372,7 +396,7 @@ input[name="myImage"] {
 }
 
 input[name="myImage"] {
-  background-color: blueviolet;
+  background-color: grey;
 }
 
 .activated {
@@ -401,4 +425,106 @@ i:active {
 i:hover {
   cursor: pointer;
   transform: translate(5, 5);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.timerDisplay {
+  padding: 40px 0;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#start,
+#pause,
+#reset {
+  margin: 5px;
+  width: 20%;
+}
+
+@media only screen and (max-width: 390px) {
+  .main_header {
+    position: static;
+    text-align: center;
+  }
+  .wrapper-3 {
+    display: none;
+  }
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .wrapper-2 {
+    display: contents;
+    text-align: center;
+  }
+  .workoutName {
+    justify-content: center;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+  .body nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .exercise_name {
+    width: auto;
+  }
+  .exercise-item {
+    height: 50px;
+    padding: 0px 20px;
+  }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
+  }
+  #workoutList {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_header {
+    position: static;
+    text-align: center;
+  }
+  .wrapper-3 {
+    display: none;
+  }
+  .main-wrapper {
+    flex-direction: column;
+  }
+  .wrapper-2 {
+    display: contents;
+    text-align: center;
+  }
+  .workoutName {
+    justify-content: center;
+  }
+  .wrapper {
+    width: fit-content;
+  }
+  .body nav {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .main-profile {
+    flex-direction: column;
+  }
+  .profile_wrapper {
+    width: fit-content;
+  }
+}
+
+h4 {
+  font-family: fangsong;
 }

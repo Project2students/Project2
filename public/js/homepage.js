@@ -112,7 +112,7 @@ saveWorkout.addEventListener("click", () => {
   total_calories = 0;
   total_time = 0;
 
-  return fetch("http://localhost:3001/api/customWorkout", {
+  return fetch("/api/customWorkout", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
