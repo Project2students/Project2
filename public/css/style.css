@@ -322,12 +322,16 @@ img {
 
 .workoutPlanHeader {
   color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 .selectionHeader {
   width: 100%;
   text-align: center;
   color: black;
+  font-family: "roboto";
+  font-weight: bolder;
 }
 
 form {
@@ -374,7 +378,8 @@ input[name="myImage"] {
 .profileHeader {
   margin-left: 25px;
   color: white;
-  text-shadow: 3px 3px deeppink;
+  font-family: "roboto";
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -382,6 +387,7 @@ input[name="myImage"] {
   display: flex;
   flex-direction: column;
   border: black;
+  text-shadow: 0 0 white;
 }
 
 .profile-info {
