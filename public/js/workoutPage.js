@@ -38,6 +38,20 @@ document.getElementById("reset").addEventListener("click", () => {
   timerRef.innerHTML = "00 : 00 : 00 : 000 ";
 });
 
+document.querySelectorAll(".deleteWorkout").forEach((el) =>
+  el.addEventListener("click", (e) => {
+    const item = { data: e.target.id };
+    e.target.parentNode.parentNode.remove();
+    return fetch("/api/customWorkout", {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    });
+  })
+);
+
 function displayTimer() {
   milliseconds += 10;
   if (milliseconds == 1000) {
