@@ -77,7 +77,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: black;
+  color: #e7dfdd;
 }
 
 .login-card {
@@ -90,7 +90,7 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: transparent;
-  color: black;
+  color: #e7dfdd;
 }
 
 input {
@@ -296,7 +296,6 @@ img {
 /* login page */
 .page-title {
   margin: 10px 0px;
-  color: black;
 }
 
 .profile_wrapper {
