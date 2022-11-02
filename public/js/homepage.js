@@ -1,14 +1,19 @@
 let delete_btn = [];
 let total_time = 0;
 let total_calories = 0;
+let workroutName;
 
 const addBtn = document.querySelectorAll("i");
-
 const list = document.querySelector(".list");
 const total_duration = document.querySelector(".total_duration");
 let workroutTitle = document.querySelector("#workoutName");
-
+workroutTitle.setAttribute("required", "");
 let created_list_items = [];
+
+workroutTitle.addEventListener("change", (e) => {
+  workroutName = e.target.value;
+});
+
 addBtn.forEach((el) =>
   el.addEventListener("click", (e) => {
     const exercise_name = e.target.dataset.name;
@@ -90,39 +95,41 @@ addBtn.forEach((el) =>
 
 const saveWorkout = document.querySelector("#saveWorkout");
 saveWorkout.addEventListener("click", () => {
-  list.innerHTML = "";
-  total_duration.innerHTML = "Duration: 0s";
-  document
-    .querySelectorAll(".exercise-item")
-    .forEach((el) => el.classList.remove("active"));
-  document.querySelectorAll(".add i").forEach((el) => {
-    el.classList.remove("fa-circle-minus");
-    el.classList.add("fa-circle-plus");
-  });
-  let workroutName = workroutTitle.value;
+  if (workroutName) {
+    list.innerHTML = "";
+    total_duration.innerHTML = "Duration: 0s";
+    document
+      .querySelectorAll(".exercise-item")
+      .forEach((el) => el.classList.remove("active"));
+    document.querySelectorAll(".add i").forEach((el) => {
+      el.classList.remove("fa-circle-minus");
+      el.classList.add("fa-circle-plus");
+    });
+    created_list_items = created_list_items.map((el) => {
+      el.workout_id = workroutName;
+      el.total_time = `${Math.floor(total_time / 60)} min ${total_time % 60}`;
+      el.total_calories = total_calories;
+      return el;
+    });
+    console.log(created_list_items);
+    workroutTitle.value = "";
+    total_calories = 0;
+    total_time = 0;
 
-  created_list_items = created_list_items.map((el) => {
-    el.workout_id = workroutName;
-    el.total_time = `${Math.floor(total_time / 60)} min ${total_time % 60}`;
-    el.total_calories = total_calories;
-    return el;
-  });
-  console.log(created_list_items);
-  workroutTitle.value = "";
-  total_calories = 0;
-  total_time = 0;
-
-  return fetch("/api/customWorkout", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(created_list_items),
-  }).then((response) => {
-    created_list_items = [];
-    const fullbody_style = document.querySelectorAll("svg g g");
-    fullbody_style.forEach((el) => (el.style.fill = "black"));
-  });
+    return fetch("/api/customWorkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(created_list_items),
+    }).then((response) => {
+      created_list_items = [];
+      const fullbody_style = document.querySelectorAll("svg g g");
+      fullbody_style.forEach((el) => (el.style.fill = "black"));
+    });
+  } else {
+    alert("Please enter Workout Title");
+  }
 });
 
 const all_muscleGroups = document.querySelectorAll("svg g g");
