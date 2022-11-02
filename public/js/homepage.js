@@ -16,6 +16,7 @@ workroutTitle.addEventListener("change", (e) => {
 
 addBtn.forEach((el) =>
   el.addEventListener("click", (e) => {
+    const muscle = e.target.dataset.muscle;
     const exercise_name = e.target.dataset.name;
     const duration = parseInt(e.target.dataset.duration);
     const username = list.getAttribute("data-value");
@@ -38,6 +39,7 @@ addBtn.forEach((el) =>
         rest,
         calories,
         total_time,
+        muscle,
       });
     }
 
@@ -101,7 +103,7 @@ saveWorkout.addEventListener("click", () => {
     document
       .querySelectorAll(".exercise-item")
       .forEach((el) => el.classList.remove("active"));
-    document.querySelectorAll(".add i").forEach((el) => {
+    document.querySelectorAll("i").forEach((el) => {
       el.classList.remove("fa-circle-minus");
       el.classList.add("fa-circle-plus");
     });
@@ -111,7 +113,6 @@ saveWorkout.addEventListener("click", () => {
       el.total_calories = total_calories;
       return el;
     });
-    console.log(created_list_items);
     workroutTitle.value = "";
     total_calories = 0;
     total_time = 0;
@@ -135,29 +136,40 @@ saveWorkout.addEventListener("click", () => {
 const all_muscleGroups = document.querySelectorAll("svg g g");
 all_muscleGroups.forEach((el) =>
   el.addEventListener("click", (e) => {
-    console.log(e.target.parentNode);
     e.target.parentNode.style.fill = "red";
   })
 );
 
 addBtn.forEach((el) =>
   el.addEventListener("click", (e) => {
-    const listItem = e.target.parentNode.parentNode;
-
-    let selected;
-    console.log(e.target.dataset.muscle);
-
+    let activeItems = [];
+    const listItem = e.target.parentNode;
+    const allMuscleItems = document.querySelectorAll(
+      `div[data-muscle=${listItem.dataset.muscle}]`
+    );
+    allMuscleItems.forEach((el) => {
+      if (el.classList.contains("active")) {
+        activeItems.push(listItem.dataset.muscle);
+      }
+    });
     if (
-      e.target.dataset.muscle == "Full body" &&
-      listItem.classList.contains("active")
+      e.target.dataset.muscle == "Full-body" &&
+      activeItems.includes(e.target.dataset.muscle)
     ) {
       const fullbody_style = document.querySelectorAll("svg g g");
       fullbody_style.forEach((el) => (el.style.fill = "red"));
-    } else {
+    } else if (
+      e.target.dataset.muscle == "Full-body" &&
+      !activeItems.includes(e.target.dataset.muscle)
+    ) {
+      const fullbody_style = document.querySelectorAll("svg g g");
+      fullbody_style.forEach((el) => (el.style.fill = "black"));
+    } else if (activeItems.includes(e.target.dataset.muscle)) {
       const selected = document.querySelectorAll(`#${e.target.dataset.muscle}`);
       selected.forEach((el) => (el.style.fill = "red"));
+    } else {
+      const selected = document.querySelectorAll(`#${e.target.dataset.muscle}`);
+      selected.forEach((el) => (el.style.fill = "black"));
     }
-
-    // selected.style.fill = "red";
   })
 );

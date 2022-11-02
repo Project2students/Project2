@@ -136,17 +136,13 @@ input {
   transform: scale(3);
   border-radius: 50%;
 }
-.add {
-  background: none;
-  border: none;
-  width: 10px;
-}
-.add i:active {
+
+i:active {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   transform: scale(0.83);
 }
 
-.add:hover {
+i:hover {
   transform: scale(1.2);
 }
 
