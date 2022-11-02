@@ -157,7 +157,7 @@ nav a {
   text-align: center;
 }
 
-.logout:hover {
+#logout:hover {
   color: rgb(36, 159, 159);
 }
 
