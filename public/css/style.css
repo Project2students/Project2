@@ -4,8 +4,9 @@ body {
   background-image: url("https://img.freepik.com/free-photo/portrait-young-sportive-girl-training-with-dumbbells-isolated-blue-background-neon_155003-45614.jpg?size=626&ext=jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   margin: 0;
-  padding: 0;
+  padding: 0 0 15px 0;
   box-sizing: border-box;
 }
 
@@ -31,7 +32,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin: 10px 15px;
+  margin: 0px 15px;
 }
 
 .row {
@@ -105,6 +106,7 @@ input {
 }
 
 .exercise-item {
+  transition: all 0.2s ease-in-out;
   width: 100%;
   height: 40px;
   display: flex;
@@ -116,6 +118,8 @@ input {
 }
 .exercise-item:hover {
   background-color: rgb(71, 153, 181);
+  transition: all 0.2s ease-in-out;
+  font-style: italic;
 }
 
 .exercise-item .btn {
@@ -132,17 +136,13 @@ input {
   transform: scale(3);
   border-radius: 50%;
 }
-.add {
-  background: none;
-  border: none;
-  width: 10px;
-}
-.add i:active {
+
+i:active {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   transform: scale(0.83);
 }
 
-.add:hover {
+i:hover {
   transform: scale(1.2);
 }
 
@@ -231,7 +231,7 @@ img {
 }
 
 .wrapper-2 {
-  width: 25%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -263,7 +263,7 @@ img {
   /* background-color: royalblue; */
   padding: 2px 5px;
   border-radius: 5px;
-  color: black;
+  color: #fff;
 }
 
 .delete_btn {
@@ -406,6 +406,38 @@ input[name="myImage"] {
 
 .workoutName {
   display: flex;
+  margin-bottom: 10px;
+}
+
+.workoutName label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.workoutName input {
+  border-radius: 5px;
+  padding: 2px 5px;
+  text-align: center;
+  width: 250px;
+}
+
+#email-login {
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+#password-login {
+  border-radius: 10px;
+  padding: 2px 10px;
+}
+
+i:active {
+  transform: scale(0.9);
+}
+i:hover {
+  cursor: pointer;
+  transform: translate(5, 5);
 }
 
 .timer {
@@ -508,4 +540,10 @@ input[name="myImage"] {
 
 h4 {
   font-family: fangsong;
+}
+
+.list li {
+  list-style: none;
+  font-weight: bold;
+  font-style: italic;
 }
