@@ -195,10 +195,6 @@ img {
   color: var(--dark);
 }
 
-.btn {
-  margin-top: 10px;
-}
-
 .item-description {
   display: flex;
   flex-direction: column;
@@ -386,8 +382,11 @@ input[name="myImage"] {
 .profile-data {
   display: flex;
   flex-direction: column;
-  border: black;
-  text-shadow: 0 0 white;
+  color: #fff;
+}
+.user-data {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .profile-info {
@@ -522,6 +521,9 @@ i:hover {
   #logout {
     padding: 10px 10px;
   }
+  .timer {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -591,7 +593,19 @@ h4 {
 .timerDisplay {
   color: #fff;
 }
+.wrapper-workout-2 {
+  margin-top: 50px;
+}
 
-.timer {
-  flex-direction: column;
+.card-body p {
+  font-weight: bold;
+}
+
+.form-control-file {
+  font-size: 12px;
+}
+
+.profile_wrapper form {
+  display: flex;
+  align-items: center;
 }
