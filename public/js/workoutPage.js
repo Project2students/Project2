@@ -35,7 +35,7 @@ document.getElementById("pause").addEventListener("click", () => {
 document.getElementById("reset").addEventListener("click", () => {
   clearInterval(int);
   [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-  timerRef.innerHTML = "00 : 00 : 00 : 000 ";
+  timerRef.innerHTML = "00 : 00 : 000";
 });
 
 document.querySelectorAll(".deleteWorkout").forEach((el) =>
@@ -77,5 +77,5 @@ function displayTimer() {
       ? "0" + milliseconds
       : milliseconds;
 
-  timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+  timerRef.innerHTML = `${m} : ${s} : ${ms}`;
 }
