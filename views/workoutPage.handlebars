@@ -1,47 +1,53 @@
 <div class="workout_Page">
 
-  <ul id="workoutList">
+  <div class="wrapper-workout-1">
+    <ul id="workoutList">
 
-    {{#each results as |result|}}
-      <li class="workoutlistItem">
-        <a
-          class="btn btn-primary"
-          data-bs-toggle="collapse"
-          href="#collapseExample-{{result.0.id}}"
-          role="button"
-          aria-expanded="false"
-          aria-controls="collapseExample-{{result.0.id}}"
-        ><h2>{{result.0.workout_id}}
-            | Total: Calories:
-            {{result.0.total_calories}}Kcal | Duration:
-            {{result.0.total_time}}s</h2><button
-            class="deleteWorkout btn btn-danger"
-            id="{{result.0.workout_id}}"
-          >Delete</button>
-        </a>
-        {{#each result as |innerresult|}}
-          <div class="collapse" id="collapseExample-{{result.0.id}}">
-            <div class="card card-body">
-              <p>Exercise:
-                {{innerresult.exercise_name}}
-                | Duration:
-                {{innerresult.duration}}s | Calories:
-                {{innerresult.calories}}Kcal</p>
+      {{#each results as |result|}}
+        <li class="workoutlistItem">
+          <a
+            class="btn btn-primary"
+            data-bs-toggle="collapse"
+            href="#collapseExample-{{result.0.id}}"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample-{{result.0.id}}"
+          ><h2>{{result.0.workout_id}}
+              | Total: Calories:
+              {{result.0.total_calories}}Kcal | Duration:
+              {{result.0.total_time}}s</h2><button
+              class="deleteWorkout btn btn-danger"
+              id="{{result.0.workout_id}}"
+            >Delete</button>
+          </a>
+          {{#each result as |innerresult|}}
+            <div class="collapse" id="collapseExample-{{result.0.id}}">
+              <div class="card card-body">
+                <p>Exercise:
+                  {{innerresult.exercise_name}}
+                  | Duration:
+                  {{innerresult.duration}}s | Calories:
+                  {{innerresult.calories}}Kcal</p>
+              </div>
             </div>
-          </div>
-        {{/each}}
-      </li>
-    {{/each}}
-  </ul>
 
-  <div class="timerDisplay">
-    00 : 00 : 000
+          {{/each}}
+        </li>
+      {{/each}}
+    </ul>
+
   </div>
 
-  <div class="timer">
-    <button id="start" class="btn btn-success"> start </button>
-    <button id="pause" class="btn btn-secondary"> pause</button>
-    <button id="reset" class="btn btn-danger"> reset</button>
+  <div class="wrapper-workout-2">
+    <div class="timerDisplay">
+      00 : 00 : 000
+    </div>
+
+    <div class="timer">
+      <button id="start" class="btn btn-success"> start </button>
+      <button id="pause" class="btn btn-secondary"> pause</button>
+      <button id="reset" class="btn btn-danger"> reset</button>
+    </div>
   </div>
 </div>
 

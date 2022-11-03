@@ -195,10 +195,6 @@ img {
   color: var(--dark);
 }
 
-.btn {
-  margin-top: 10px;
-}
-
 .item-description {
   display: flex;
   flex-direction: column;
@@ -386,8 +382,11 @@ input[name="myImage"] {
 .profile-data {
   display: flex;
   flex-direction: column;
-  border: black;
-  text-shadow: 0 0 white;
+  color: #fff;
+}
+.user-data {
+  font-style: italic;
+  font-weight: bold;
 }
 
 .profile-info {
@@ -447,7 +446,7 @@ i:hover {
 }
 
 .timerDisplay {
-  padding: 40px 0;
+  padding: 15px 0;
   font-size: 40px;
   display: flex;
   justify-content: center;
@@ -461,6 +460,12 @@ i:hover {
 }
 
 @media only screen and (max-width: 390px) {
+  #start,
+  #pause,
+  #reset {
+    margin: 5px;
+    width: 100px;
+  }
   .main_header {
     position: static;
     text-align: center;
@@ -501,6 +506,23 @@ i:hover {
   }
   #workoutList {
     padding: 0;
+  }
+  .timerDisplay {
+    font-size: 12px;
+    padding: 10px auto;
+  }
+  .wrapper-workout-2 {
+    margin-top: 90px;
+  }
+  .workoutListItem h2 {
+    font-size: 16px;
+  }
+  nav a,
+  #logout {
+    padding: 10px 10px;
+  }
+  .timer {
+    flex-direction: column;
   }
 }
 
@@ -546,4 +568,44 @@ h4 {
   list-style: none;
   font-weight: bold;
   font-style: italic;
+}
+
+.workout_Page {
+  width: 100%;
+  display: flex;
+}
+
+.wrapper-workout-1 {
+  width: 70%;
+}
+
+.wrapper-workout-2 {
+  width: 30%;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.workoutListItem {
+  list-style: none;
+}
+
+.timerDisplay {
+  color: #fff;
+}
+.wrapper-workout-2 {
+  margin-top: 50px;
+}
+
+.card-body p {
+  font-weight: bold;
+}
+
+.form-control-file {
+  font-size: 12px;
+}
+
+.profile_wrapper form {
+  display: flex;
+  align-items: center;
 }

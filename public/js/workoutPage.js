@@ -35,7 +35,9 @@ document.getElementById("pause").addEventListener("click", () => {
 document.getElementById("reset").addEventListener("click", () => {
   clearInterval(int);
   [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
-  timerRef.innerHTML = "00 : 00 : 000";
+
+  timerRef.innerHTML = "00 : 00 : 000 ";
+
 });
 
 document.querySelectorAll(".deleteWorkout").forEach((el) =>
